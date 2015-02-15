@@ -12,7 +12,7 @@ Personal activity monitoring devices such as Fitbit, Nike Fuelband, and Jawbone 
 &nbsp;&nbsp;
 
 ## The Data
-The original data set was downloaded from Coursera's Reproducible Research class web site on February 03, 2015. Measurements were taken from a personal activity device worn by an anonymous individual whose activities were recorded for two months from October to November of 2012. The downloaded data set conists of the number of steps taken by the individual in each five-minute interval for each day during that two-month period.  
+The original data set was downloaded from Coursera's Reproducible Research class web site on February 03, 2015 and is contained in the activity.zip file which can be found in this repository. Measurements were taken from a personal activity device worn by an anonymous individual whose activities were recorded for two months from October to November of 2012. The downloaded data set conists of the number of steps taken by the individual in each five-minute interval for each day during that two-month period.  
 &nbsp;&nbsp;
 &nbsp;&nbsp;  
 The variables in this data set are:
