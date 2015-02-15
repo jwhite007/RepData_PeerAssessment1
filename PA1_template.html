@@ -291,17 +291,11 @@ hist1
 
 <h4>Calculate and report the mean and median of the total number of steps taken per day</h4>
 
-<pre><code class="r">paste(&#39;mean total steps per day: &#39;, round(mean(tspd_df$totalsteps)))
+<pre><code class="r">mean_tspd &lt;- round(mean(tspd_df$totalsteps))
+median_tspd &lt;- round(median(tspd_df$totalsteps))
 </code></pre>
 
-<pre><code>## [1] &quot;mean total steps per day:  10766&quot;
-</code></pre>
-
-<pre><code class="r">paste(&#39;median total steps per day: &#39;, round(median(tspd_df$totalsteps)))
-</code></pre>
-
-<pre><code>## [1] &quot;median total steps per day:  10765&quot;
-</code></pre>
+<p>The mean and median of the total steps per day are 1.0766 &times; 10<sup>4</sup> and 1.0765 &times; 10<sup>4</sup>, respectively.  </p>
 
 <h3>Discussion of Histogram above and the Mean and Median Total Steps per Day</h3>
 
@@ -335,11 +329,10 @@ tsp1
 
 <h4>The interval which contains the most amount of steps on average</h4>
 
-<pre><code class="r">paste(&#39;Interval with maximum number of steps averaged across days: &#39;, mspi_df[mspi_df$meansteps == max(mspi_df$meansteps), 1])
+<pre><code class="r">ims &lt;- mspi_df[mspi_df$meansteps == max(mspi_df$meansteps), 1]
 </code></pre>
 
-<pre><code>## [1] &quot;Interval with maximum number of steps averaged across days:  835&quot;
-</code></pre>
+<p>The interval with maximum number of steps averaged across days is 835.  </p>
 
 <h3>Discussion of Daily Activity Pattern</h3>
 
@@ -351,11 +344,10 @@ tsp1
 
 <h4>The number of missing values in the data set</h4>
 
-<pre><code class="r">paste(&#39;Missing values in base data set: &#39;, sum(is.na(activity_df$steps)))
+<pre><code class="r">mvalues &lt;- sum(is.na(activity_df$steps))
 </code></pre>
 
-<pre><code>## [1] &quot;Missing values in base data set:  2304&quot;
-</code></pre>
+<p>The number of missing values in the base data set is 2304  </p>
 
 <h4>How are missing values distributed?</h4>
 
@@ -400,17 +392,11 @@ hist2
 
 <h4>From the data set with the imputed values, calculate and report the mean and median of the total number of steps taken per day</h4>
 
-<pre><code class="r">paste(&#39;mean: &#39;, round(mean(itspd_df$totalsteps)))
+<pre><code class="r">mean_itspd &lt;- round(mean(itspd_df$totalsteps))
+median_itspd &lt;- round(median(itspd_df$totalsteps))
 </code></pre>
 
-<pre><code>## [1] &quot;mean:  10750&quot;
-</code></pre>
-
-<pre><code class="r">paste(&#39;median: &#39;, round(median(itspd_df$totalsteps)))
-</code></pre>
-
-<pre><code>## [1] &quot;median:  10641&quot;
-</code></pre>
+<p>The mean and median of the total steps per day in the imputed data set are 1.075 &times; 10<sup>4</sup> and 1.0641 &times; 10<sup>4</sup>, respectively.  </p>
 
 <h3>Discussion of the Impact of Imputing Missing Values</h3>
 

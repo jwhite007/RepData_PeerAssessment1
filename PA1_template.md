@@ -80,20 +80,10 @@ hist1
 #### Calculate and report the mean and median of the total number of steps taken per day
 
 ```r
-paste('mean total steps per day: ', round(mean(tspd_df$totalsteps)))
+mean_tspd <- round(mean(tspd_df$totalsteps))
+median_tspd <- round(median(tspd_df$totalsteps))
 ```
-
-```
-## [1] "mean total steps per day:  10766"
-```
-
-```r
-paste('median total steps per day: ', round(median(tspd_df$totalsteps)))
-```
-
-```
-## [1] "median total steps per day:  10765"
-```
+The mean and median of the total steps per day are 1.0766 &times; 10<sup>4</sup> and 1.0765 &times; 10<sup>4</sup>, respectively.  
 
 ### Discussion of Histogram above and the Mean and Median Total Steps per Day
 The mean and median are almost identical which is not surprising as the histogram shows a fairly even distribution. The histogram has been scaled to match that of the histogram created with the imputed data set so as to make a visual comparison easier.  
@@ -128,12 +118,9 @@ tsp1
 #### The interval which contains the most amount of steps on average
 
 ```r
-paste('Interval with maximum number of steps averaged across days: ', mspi_df[mspi_df$meansteps == max(mspi_df$meansteps), 1])
+ims <- mspi_df[mspi_df$meansteps == max(mspi_df$meansteps), 1]
 ```
-
-```
-## [1] "Interval with maximum number of steps averaged across days:  835"
-```
+The interval with maximum number of steps averaged across days is 835.  
 
 ### Discussion of Daily Activity Pattern
 On average it appears that the subject is not very active from 21:00 to 05:00 the next day. The data implies that the subject gets to sleep anywhere between 21:00 and 24:00 and wakes shortly after 05:00 on average. The subject's physical activity appears to drop between the hours 09:00-16:00, indicative of someone who may hold a sedentary desk job. There are four major peaks worth noting... 08:00-09:00, 11:00-12:00, 15:00-16:00, and 18:00-19:00. We can speculate on what this pattern means. The first peak may represent a morning commute to a job. The second peak may signify the time at which the subject normally takes a lunch break. The third peak may represent some activity during an afternoon break. The fourth peak may signify an afternoon commute back to home. It's interesting to note the difference between the first peak and the fourth peak, the first peak involving more steps and containing the average maximum number of steps which occurs in the 5-minute interval from 08:35-08:40 as shown in the calculation above. This may represent a morning exercise regimen or possibly the subject walks to work in the morning and then takes the metro home.  
@@ -144,12 +131,9 @@ On average it appears that the subject is not very active from 21:00 to 05:00 th
 #### The number of missing values in the data set
 
 ```r
-paste('Missing values in base data set: ', sum(is.na(activity_df$steps)))
+mvalues <- sum(is.na(activity_df$steps))
 ```
-
-```
-## [1] "Missing values in base data set:  2304"
-```
+The number of missing values in the base data set is 2304  
 
 #### How are missing values distributed?
 
@@ -199,20 +183,10 @@ hist2
 #### From the data set with the imputed values, calculate and report the mean and median of the total number of steps taken per day
 
 ```r
-paste('mean: ', round(mean(itspd_df$totalsteps)))
+mean_itspd <- round(mean(itspd_df$totalsteps))
+median_itspd <- round(median(itspd_df$totalsteps))
 ```
-
-```
-## [1] "mean:  10750"
-```
-
-```r
-paste('median: ', round(median(itspd_df$totalsteps)))
-```
-
-```
-## [1] "median:  10641"
-```
+The mean and median of the total steps per day in the imputed data set are 1.075 &times; 10<sup>4</sup> and 1.0641 &times; 10<sup>4</sup>, respectively.  
 
 ### Discussion of the Impact of Imputing Missing Values
 In the data set there are 2,304 intervals with missing values for number of steps. There are 288 5-minute intervals in a 24-hour period. 2,304 represents 8 whole days of missing data. Inspection of the data reveals that there are exactly 8 different days where data was not recorded. The missing values do not represent days with sporadic interval-data collection.  The missing values have been imputed with data from the means of the respective intervals. Considering the distribution of the data, imputing with the mean or median from the respective intervals or with the mean or median of the total number of steps per day should not be much different. Imputing missing values in this way should not change the data by much as we are simply adding values to the bin with the mean number of steps per day. All other histogram bins should stay the same. Comparing the histograms shows this to be the case. The mean and median of the total number of steps drop only slightly with only a slight skew towards days with lower number of steps as signified by a slightly larger mean than median of the imputed data.  
